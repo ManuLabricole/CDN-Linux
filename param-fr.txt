@@ -1,0 +1,4 @@
+  nb lignes : 74067
+  nb mots :  3402633
+  nb bytes : 23634544
+  name : fr.txt

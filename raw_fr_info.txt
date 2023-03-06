@@ -1,0 +1,6 @@
+
+lun. 06 mars 2023 16:52:15 CET
+Data before punctuation :\n
+Nb Lines : 74067 fr.txt
+Nb Words : 3402633 fr.txt
+Nb Bytes : 23634544 fr.txt
