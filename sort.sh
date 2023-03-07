@@ -30,6 +30,14 @@ touch $sortedFile
 echo -e > $sortedFile
 sort $cleanFile|uniq -c|sort -nr > $sortedFile  
 #sort $cleanFile|uniq -c|sort -nr > $sortedFile
+echo -e "${CGreen}File sorted${NC}"
+echo -e "Buidling First and Last 30 words files..."
+top30=top_30_${part_after_underscore}
+last30=last_30_${part_after_underscore}
 
-echo -e "exit !!"
+touch $top30
+echo > $top30
+echo $date >> $top30
+head -n 30 ${sortedFile} >> $top30 
+touch $last30
 
