@@ -1,0 +1,6 @@
+
+mar. 07 mars 2023 12:01:28 CET
+Data before punctuation :\n
+Nb Lines : 74067 en.txt
+Nb Words : 3037545 en.txt
+Nb Bytes : 20826518 en.txt
