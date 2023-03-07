@@ -1,0 +1,19 @@
+#!/bin/bash
+BGreen='\033[1;32m'
+BRed='\033[1;31m'
+BCyan='\033[1;36m'
+BIYellow='\033[1;93m'
+NC='\033[0m'
+
+echo "running $0"
+targetDir=$2
+file=$1
+if [[ -d "$targetDir" ]]
+then
+rm -r $targetDir
+echo -e "Removing existing $targetDir"
+fi
+echo -e "creating folder ${targetDir}"
+mkdir $targetDir
+unzip $file -d $targetDir
+echo -e "Successfully unzip -->${BCyan}${file}${NC}<-- in folder -->${BCyan}${targetDir}${NC} <--"
