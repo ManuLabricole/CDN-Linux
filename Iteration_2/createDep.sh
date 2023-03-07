@@ -27,6 +27,6 @@ echo $depDir
 done
 
 for fullfile in $(ls); do
-basename=$(echo "$fullfile" | cut -d. -f1)
-echo -e $basename
+basename=$(echo "$fullfile" | cut -d. -f1 > $fullfile )
+a=
 done
