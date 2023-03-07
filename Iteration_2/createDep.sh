@@ -28,6 +28,10 @@ echo $depDir
 done
 
 for fullfile in $(ls); do
-#basename=$(echo "$fullfile" | cut -d. -f1 > $fullfile )
-echo -e "$basename"
+#First cleaning and check of part
+basename=$(echo "$fullfile" | cut -d. -f1 | sed 's/[0-9]*//g')
+
+echo -e "${BGreen}Remove .data"
+echo -e "${BCyan}$basename"
+
 done
