@@ -29,5 +29,13 @@ sed -i "s/./\L&/g" $cleanFile
 echo -e "${BGreen}Majuscule removed${NC}"
 sed -i "s/[0-9]*//g" $cleanFile
 echo -e "${BGreen}Number removed ${NC}"
+echo -e "${BIYellow}Substition Space --> break${NC}"
+sed -i "s/ /\n/g" $cleanFile
+echo -e "${BGreen}Spaces replaced with LineBreaks${NC}"
+
+
+
 
 echo -e "${BIYellow}Cleaning  -->${BCyan} $file ${BCyan} ${BIYellow}<--${NC}"
+echo bash sortFile.sh $cleanFile
+
