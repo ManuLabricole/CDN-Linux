@@ -29,9 +29,7 @@ done
 
 for fullfile in $(ls); do
 #First cleaning and check of part
-basename=$(echo "$fullfile" | cut -d. -f1 | sed 's/[0-9]*//g')
-
+basename=$(echo "$fullfile" | cut -d. -f1 | sed 's/[0-9]*//g' | awk -F'[-_]' '{for (i=1;i<=NF;i++){print 
+$i}'
 echo -e "${BGreen}Remove .data"
-echo -e "${BCyan}$basename"
-
 done
