@@ -21,7 +21,7 @@ fi
 cleanFile="preproc_${file}"
 touch $cleanFile
 echo > $cleanFile
-echo -e "${BIYellowe}Removing punctuation...${NC}"
+echo -e "${BIYellow}Removing punctuation...${NC}"
 sed -e "s/[[:punct:]]//g" ${file}|grep -v "^$" > $cleanFile
 echo -e "${BGreen}Punctuation removed${NC}"
 echo -e "${BIYellow}Substition Majuscule --> Minuscule"

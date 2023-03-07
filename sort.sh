@@ -17,11 +17,18 @@ if [ ! -f "$file" ]; then
   echo "File not found: $file"
   exit 1
 fi
+
+echo -e "Receiving ${BCyan}-->${file}<---${NC} to be sorted"
+part_after_underscore=$(echo "$file" | cut -d '_' -f2- | sed 's/\x1B\[[0-9;]\+[A-Za-z]//g')
+
+echo -e "Extracting extension --> ${BGreen}${part_after_underscore}${NC} <--"
+
 cleanFile=$file
-sortedFile="sortedFile.txt" 
+sortedFile="sortedFile_${part_after_underscore}" 
+echo -e "Creating new sorted file... -->${BCyan} ${sortedFile} ${NC}<--"
 touch $sortedFile
-echo > $sortedFile
+echo -e > $sortedFile
 sort $cleanFile|uniq -c|sort -nr > $sortedFile
 
-
+echo -e "exit !!"
 
