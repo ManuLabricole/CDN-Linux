@@ -1,5 +1,5 @@
 
-lun. 06 mars 2023 16:52:15 CET
+mar. 07 mars 2023 09:13:55 CET
 Data before punctuation :\n
 Nb Lines : 74067 fr.txt
 Nb Words : 3402633 fr.txt
