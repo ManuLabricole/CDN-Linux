@@ -14,11 +14,12 @@ depList=("BU HR IT")
 
 echo -e "Current workind dir is -->${BCyan}$dir${NC}<--" 
 for depDir in BU HR IT; do
+
 echo $depDir
     if [[ -d ./$depDir ]]
     then
         echo -e "The folder ${BGreen}-->${depDir}<--${NC} exist"
-    
+ 	echo -e $pwd   
     else
         echo -e "The folder ${BRed}-->${depDir}<--${NC} doesn't exist"
         echo -e "Creating folder..."
@@ -27,6 +28,6 @@ echo $depDir
 done
 
 for fullfile in $(ls); do
-basename=$(echo "$fullfile" | cut -d. -f1 > $fullfile )
-a=
+#basename=$(echo "$fullfile" | cut -d. -f1 > $fullfile )
+echo -e "$basename"
 done
