@@ -26,7 +26,7 @@ echo $depDir
     fi
 done
 
-for file in $(ls); do
-echo $file
-sed -i 's/[0-9]//g' $file > A_$file
+for fullfile in $(ls); do
+basename=$(echo "$fullfile" | cut -d. -f1)
+echo -e $basename
 done
