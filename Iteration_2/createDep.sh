@@ -38,11 +38,12 @@ part2=$(echo "$basename" | cut -d "_" -f 2)
 part3=$(echo "$basename" | cut -d "_" -f 3)
 
 # Check if part 1 is equal to BU, HR, or IT, or if part 3 is equal to BU, HR, or IT
-if [[ "$part1" == "BU" || "$part1" == "HR" || "$part1" == "IT"]]
+if [[ "$part1" == "BU" || "$part1" == "HR" || "$part1" == "IT" ]]
 then
 echo -e "${BRed} $part1"
-elif [["$part3" == "BU" || "$part3" == "HR" || "$part3" == "IT" ]]
-echo "${BGreen}$part3"
+elif [[ "$part3" == "BU" || "$part3" == "HR" || "$part3" == "IT" ]]
+then
+echo "${BYellow} $part3"
 else
 echo "Part 1 and Part 3 do not match BU, HR, or IT"
 fi
