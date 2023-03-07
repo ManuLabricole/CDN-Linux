@@ -28,7 +28,8 @@ sortedFile="sortedFile_${part_after_underscore}"
 echo -e "Creating new sorted file... -->${BCyan} ${sortedFile} ${NC}<--"
 touch $sortedFile
 echo -e > $sortedFile
-sort $cleanFile|uniq -c|sort -nr > $sortedFile
+sort $cleanFile|uniq -c|sort -nr > $sortedFile  
+#sort $cleanFile|uniq -c|sort -nr > $sortedFile
 
 echo -e "exit !!"
 
