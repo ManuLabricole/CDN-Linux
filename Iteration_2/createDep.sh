@@ -19,7 +19,8 @@ echo $depDir
     if [[ -d ./$depDir ]]
     then
         echo -e "The folder ${BGreen}-->${depDir}<--${NC} exist"
- 	echo -e $pwd   
+ 	echo -e $pwd
+	rm -rf ./$depDir/*
     else
         echo -e "The folder ${BRed}-->${depDir}<--${NC} doesn't exist"
         echo -e "Creating folder..."
@@ -31,24 +32,26 @@ for fullfile in $(ls); do
 #First cleaning and check of part
 basename=$(echo "$fullfile" | cut -d. -f1 | sed 's/[0-9]*//g' | tr '-' '_' )
 echo -e "$basename"
-echo -e "${BGreen}Remove .data"
 
 part1=$(echo "$basename" | cut -d "_" -f 1)
 part2=$(echo "$basename" | cut -d "_" -f 2)
 part3=$(echo "$basename" | cut -d "_" -f 3)
-
+#echo -e "$part1 $part2 $part3"
 # Check if part 1 is equal to BU, HR, or IT, or if part 3 is equal to BU, HR, or IT
-if [[ "$part1" == "BU" || "$part1" == "HR" || "$part1" == "IT" ]]
+if [[ "$part1" == BU || "$part1" == HR || "$part1" == IT ]]
 then
-echo -e "${BRed} $part1"
-elif [[ "$part3" == "BU" || "$part3" == "HR" || "$part3" == "IT" ]]
+dep=$part1
+name="${part3}_${part2}"
+cp $fullfile ./$dep/$name.data
+echo -e "Working in -->${BYellow}${dep}${NC}<--"
+echo -e "${BCyan}$name${NC}"
+
+elif [[ "$part3" == BU || "$part3" == HR || $part3 == IT ]]
 then
-echo "${BYellow} $part3"
-else
-echo "Part 1 and Part 3 do not match BU, HR, or IT"
+dep=$part3
+name=${part2}_${part1}
+echo -e "Working in -->${BYellow}${dep}${NC}<--"
+echo -e "${BRed}$name${NC}"
+cp $fullfile ./$dep/$name.data
 fi
-
-
-
-
 done
