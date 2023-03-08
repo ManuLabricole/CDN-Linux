@@ -43,14 +43,14 @@ then
 dep=$part1
 name="${part3}_${part2}"
 cp $fullfile ./$dep/$name.data
-echo -e "Working in -->${BYellow}${dep}${NC}<--"
+echo -e "Working in -->${BIYellow}${dep}${NC}<--"
 echo -e "${BCyan}$name${NC}"
 
 elif [[ "$part3" == BU || "$part3" == HR || $part3 == IT ]]
 then
 dep=$part3
 name=${part2}_${part1}
-echo -e "Working in -->${BYellow}${dep}${NC}<--"
+echo -e "Working in -->${BIYellow}${dep}${NC}<--"
 echo -e "${BRed}$name${NC}"
 cp $fullfile ./$dep/$name.data
 fi
